@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>target与currentTarget</title>
+</head>
+
+<body>
+    <h2>target and currentTarget</h2>
+    <p>target是实际点击的元素，currentTarget是监听的元素</p>
+    <div id="a">a
+        <div id="b">b
+            <div id="c">c
+            </div>
+        </div>
+    </div>
+    <p>
+        <span>target:</span>
+        <span id="target"></span>
+    </p>
+    <p>
+        <span>currentTarget:</span>
+        <span id="currentTarget"></span>
+    </p>
+    <script>
+        b.addEventListener('click', (event) => {
+        target.innerText = event.target.id
+        currentTarget.innerText = event.currentTarget.id
+
+        // console.log("target")
+        // console.log(event.target)
+        // console.log("currentTarget")
+        // console.log(event.currentTarget)
+    })
+    </script>
+</body>
+<style>
+    div {
+        padding: 50px;
+    }
+
+    #a {
+        background-color: red;
+    }
+
+    #b {
+        background-color: orange;
+    }
+
+    #c {
+        background-color: yellow;
+    }
+</style>
+</html>
