@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡和事件捕获</title>
+    <script src="_lib/toastify/toastify.min.js"></script>
+    <link rel="stylesheet" href="_lib/toastify/toastify.min.css">
+</head>
+<script>
+    function toast(message) {
+        const options= {
+            text: message,
+            duration: 3000,  //ms
+        }
+        Toastify(options).showToast();
+    }
+
+</script>
+<body>
+<h2>事件冒泡与事件捕获</h2>
+<p>
+    当点击一个元素时，先从父元素到子元素逐级触发捕获事件，再从子元素到父元素触发冒泡事件
+</p>
+<script>
+    const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+    let current_el = document.querySelector('body');
+    function createDivAndInsertTo(i,el){
+        const new_el = document.createElement('div')
+        new_el.id = i;
+        new_el.innerText = new_el.id
+        new_el.style.backgroundColor=colors[i]
+        el.appendChild(new_el)
+        return new_el
+    }
+    for (let i=0;i<4;i++) {
+        current_el = createDivAndInsertTo(i,current_el)
+        current_el.addEventListener('click',(event)=>{
+            const id = event.currentTarget.id;
+            toast("bubble:"+id)
+        })
+        current_el.addEventListener('click',(event)=>{
+            const id = event.currentTarget.id;
+            toast("capture:"+id)
+        },{capture:true})
+    }
+</script>
+<style>
+    div {
+        padding: 0em 1em 1em 1em ;
+    }
+</style>
+</body>
+</html>
