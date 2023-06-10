@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画示例</title>
+</head>
+<body>
+<h2>requestAnimationFrame</h2>
+<div id="myElement"></div>
+<script>
+    // 获取要进行动画的元素
+    const element = document.getElementById('myElement');
+
+    // 定义动画的起始值和结束值
+    const startValue = 0;
+    const endValue = 100;
+
+    // 定义动画的持续时间和开始时间
+    const duration = 1000; // 1秒
+    let startTime = null;
+
+    // 定义动画函数
+    function animate(timestamp) {
+        if (!startTime) {
+            startTime = timestamp; // 记录动画开始时间
+        }
+
+        const elapsed = timestamp - startTime; // 计算从开始到现在经过的时间
+
+        // 根据时间计算当前值
+        const currentValue = startValue + ((endValue - startValue) * elapsed) / duration;
+
+        // 更新元素的样式或属性
+        element.style.opacity = currentValue / 100;
+
+        if (elapsed < duration) {
+            // 如果动画未结束，则继续调用 requestAnimationFrame
+            requestAnimationFrame(animate);
+        }
+    }
+
+    // 开始动画
+    requestAnimationFrame(animate);
+
+</script>
+</body>
+<style>
+    #myElement{
+        width:50px;
+        height:50px;
+        background-color: #73a5ff;
+    }
+</style>
+</html>
