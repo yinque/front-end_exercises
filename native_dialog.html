@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原生对话框-alert、confirm、prompt</title>
+    <script src="_lib/toastify/toastify.min.js"></script>
+    <link rel="stylesheet" href="_lib/toastify/toastify.min.css">
+</head>
+<script>
+    function toast(message) {
+        const options= {
+            text: message,
+            duration: 3000,  //ms
+        }
+        Toastify(options).showToast();
+    }
+</script>
+<body>
+<button type="button" onclick="alert('this is an alert')">alert对话框</button>
+<button type="button" onclick="toast(confirm('您完全不学习是吗？')?'是的，我摆烂了':'不！我还能抢救一下')">confirm对话框</button>
+<button type="button" onclick="toast('收到密码:'+prompt('请输入密码'))">prompt对话框</button>
+</body>
+</html>
