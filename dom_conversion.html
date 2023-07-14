@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM转换</title>
+</head>
+<body>
+<div>Hello, World!</div>
+<div>请打开控制台</div>
+<script>
+    console.log("====Raw====")
+    const raw_string = '<div>Hello, World!</div>';
+    const raw_element = document.body.firstElementChild;
+    console.log({html_string: raw_string})
+    console.log(raw_element)
+    /* String to Element */
+    console.log("====String to Element====")
+    var element = (new DOMParser()).parseFromString(
+        raw_string,
+        'text/html'
+    ).body.firstChild;
+    console.log(element instanceof Element)
+    console.log(element)
+
+    /* Element to String */
+    console.log("====Element to String====")
+    var str = (new XMLSerializer()).serializeToString(element); // The xmlns attribute will be created in the root element, which is not good
+    console.log(typeof str)
+    console.log({str})
+
+    /* String to Element Method 2 */
+    console.log("====String to Element Method 2====")
+    const temp_element = document.createElement('div')
+    temp_element.innerHTML=raw_string
+    element = temp_element.firstElementChild
+    console.log(element)
+
+    /* Element to String Method 2 */
+    console.log("====Element to String Method 2====")
+    str = raw_element.outerHTML
+    console.log({str})
+</script>
+</body>
+</html>
