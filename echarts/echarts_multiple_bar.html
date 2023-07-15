@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ECharts 分组条形图</title>
+  <script src="../_lib/echarts.min.js"></script>
+</head>
+<body>
+<div id="chart-container" style="width: 400px; height: 300px;"></div>
+
+<script>
+  // 创建图表实例
+  const chart = echarts.init(document.getElementById('chart-container'));
+
+  // 模拟数据
+  const data = [
+    { name: 'A', value1: 100, value2: 80 },
+    { name: 'B', value1: 120, value2: 90 },
+    { name: 'C', value1: 80, value2: 110 },
+    { name: 'D', value1: 150, value2: 95 },
+    { name: 'E', value1: 90, value2: 100 },
+  ];
+
+  // 配置图表选项
+  const option = {
+    xAxis: {
+      type: 'category',
+      data: data.map(item => item.name),
+    },
+    yAxis: {
+      type: 'value',
+    },
+    series: [
+      {
+        name: 'Series 1',
+        type: 'bar',
+        data: data.map(item => item.value1),
+        label: {
+          show: true,
+          position: 'top',
+          formatter: '{c}', // 显示数值
+        },
+      },
+      {
+        name: 'Series 2',
+        type: 'bar',
+        data: data.map(item => item.value2),
+        label: {
+          show: true,
+          position: 'top',
+          formatter: '{c}', // 显示数值
+        },
+      },
+    ],
+  };
+
+  // 渲染图表
+  chart.setOption(option);
+</script>
+</body>
+</html>

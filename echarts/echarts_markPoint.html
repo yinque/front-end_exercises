@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MarkPoint 示例</title>
+  <script src="../_lib/echarts.min.js"></script>
+</head>
+<body>
+<div id="chart-container" style="width: 400px; height: 300px;"></div>
+
+<script>
+  // 创建图表实例
+  const chart = echarts.init(document.getElementById('chart-container'));
+
+  // 模拟数据
+  const data = [
+    { name: 'A', value: 100 },
+    { name: 'B', value: 120 },
+    { name: 'C', value: 80 },
+    { name: 'D', value: 150 },
+    { name: 'E', value: 90 },
+  ];
+
+  // 配置图表选项
+  const option = {
+    xAxis: {
+      type: 'category',
+      data: data.map(item => item.name),
+    },
+    yAxis: {
+      type: 'value',
+    },
+    series: [
+      {
+        type: 'bar',
+        data: data.map(item => item.value),
+        markPoint: {
+          symbol: 'pin', // 标记点的图形类型，可选值：circle, rect, roundRect, triangle, diamond, pin, arrow
+          symbolSize: 30, // 标记点的大小
+          symbolRotate: 0, // 标记点的旋转角度
+          silent: true, // 是否响应鼠标事件
+          label: {    // 显示点的标签
+            show: true,
+            position: 'top',
+            color: 'red',
+            fontSize: 12,
+            formatter: '{c}', // 显示数据值
+            fontWeight: 'bold',
+          },
+          data: [
+            {
+              name: '最大值',
+              type: 'max',
+              valueIndex: 0, // 数据值的索引，默认为 0
+              itemStyle: {
+                color: 'green',
+              },
+            },
+            {
+              name: '最小值',
+              type: 'min',
+              valueIndex: 0,
+              itemStyle: {
+                color: 'blue',
+              },
+            },
+            {
+              name: '平均值',
+              type: 'average',
+              valueIndex: 0,
+              itemStyle: {
+                color: 'orange',
+              },
+            },
+            {
+              name: '自定义标记点',
+              coord: ['B', 120], // 自定义标记点的坐标，可以是数据项的索引或者具体的数值
+              value: 120, // 自定义标记点的数值
+              itemStyle: {
+                color: 'purple',
+              },
+            },
+          ],
+        },
+      },
+    ],
+  };
+
+  // 渲染图表
+  chart.setOption(option);
+</script>
+</body>
+</html>
