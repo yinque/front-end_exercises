@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML输入表单示例</title>
+</head>
+<body>
+<h1>选择框</h1>
+<h2>基本选择框</h2>
+<select>
+    <option value="option1">选项1</option>
+    <option value="option2">选项2</option>
+    <option value="option3">选项3</option>
+</select>
+
+<h2>分组选择框</h2>
+<select>
+    <optgroup label="分组1">
+        <option value="option1">选项1</option>
+        <option value="option2">选项2</option>
+    </optgroup>
+    <optgroup label="分组2">
+        <option value="option3">选项3</option>
+        <option value="option4">选项4</option>
+    </optgroup>
+</select>
+
+<h2>默认选中项</h2>
+<select>
+    <option value="option1">选项1</option>
+    <option value="option2" selected>选项2（默认选中）</option>
+    <option value="option3">选项3</option>
+</select>
+
+<h2>多选选择框</h2>
+<select multiple>
+    <option value="option1">选项1</option>
+    <option value="option2">选项2</option>
+    <option value="option3">选项3</option>
+</select>
+<h1>复选框</h1>
+<h2>单选复选框</h2>
+<input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
+<label for="checkbox1">选项1</label>
+
+<h2>多选复选框</h2>
+<input type="checkbox" id="checkbox2" name="checkbox2" value="value2">
+<label for="checkbox2">选项2</label>
+
+<input type="checkbox" id="checkbox3" name="checkbox3" value="value3">
+<label for="checkbox3">选项3</label>
+
+<h2>全选复选框</h2>
+<input type="checkbox" id="select-all">
+<label for="select-all">全选</label>
+
+<input type="checkbox" id="checkbox4" name="checkbox4" value="value4">
+<label for="checkbox4">选项4</label>
+
+<input type="checkbox" id="checkbox5" name="checkbox5" value="value5">
+<label for="checkbox5">选项5</label>
+
+<h1>input类型</h1>
+<h2>单选按钮</h2>
+<input type="radio" id="radio1" name="radio" value="value1">
+<label for="radio1">选项1</label>
+
+<input type="radio" id="radio2" name="radio" value="value2">
+<label for="radio2">选项2</label>
+
+<h2>开关按钮</h2>
+<label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+</label>
+
+<h2>下拉选择框</h2>
+<select>
+    <option value="option1">选项1</option>
+    <option value="option2">选项2</option>
+    <option value="option3">选项3</option>
+</select>
+
+<h2>滑动条</h2>
+<input type="range" min="0" max="100" step="1">
+
+<h2>开关</h2>
+<input type="checkbox">
+
+<h2>文本输入框</h2>
+<input type="text" placeholder="请输入文本">
+
+<h2>文本区域</h2>
+<textarea placeholder="请输入文本"></textarea>
+
+<h2>文件上传</h2>
+<input type="file">
+</body>
+</html>
