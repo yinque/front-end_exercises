@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>pointer-events Example</title>
+    <meta charset="UTF-8">
+    <script>
+        function toast(title){
+            Toastify({
+                text: title,
+                duration: 3000
+            }).showToast();
+        }
+    </script>
+    <style>
+        .overlay{
+            position: fixed;
+            width: 100px;
+            height: 100px;
+        }
+        .o1{
+            background-color: rgba(0,255,255,0.5);
+            pointer-events: none;
+        }
+        .o2{
+            left: 110px;
+            background-color: rgba(255,0,0,0.5);;
+        }
+    </style>
+    <script src="../_lib/toastify/toastify.min.js"></script>
+    <link rel="stylesheet" href="../_lib/toastify/toastify.min.css">
+
+</head>
+<body>
+<div class="overlay o1"></div>
+<div class="overlay o2"></div>
+<button onclick="toast('点击了按钮')">按钮</button>
+<button onclick="toast('点击了按钮')">按钮</button>
+<button onclick="toast('点击了按钮')">按钮</button>
+<button onclick="toast('点击了按钮')">按钮</button>
+<button onclick="toast('点击了按钮')">按钮</button>
+<button onclick="toast('点击了按钮')">按钮</button>
+<button onclick="toast('点击了按钮')">按钮</button>
+<span style="color: dodgerblue">
+    蓝色设置了pointer-events: none;  可以穿透，点击下面的元素;
+</span>
+<span style="color: palevioletred">
+    红色为默认css，pointer-events: auto;，无法穿透点击下面的元素。
+</span>
+</body>
+</html>

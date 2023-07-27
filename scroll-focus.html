@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="zh-cn"><head>
+    <meta charset="UTF-8">
+    <title>焦点于滚动中的变化</title>
+</head>
+<body>
+        <div id="focus">焦点Y（滚动查看右下角信息变化）</div>
+
+        <div id="info"></div>
+</body>
+<style>
+    html,body{
+        height: 200%;
+        margin: 0;
+        background-color: rgb(255, 248, 237);;
+    }
+    #focus{
+        width: 100%;
+        box-sizing: border-box;
+        /*border: rgb(191, 223, 140) 1px solid;*/
+        background-color: rgb(191, 223, 140);
+        border-radius: 5px;
+
+        position: absolute;
+        top: 0;
+    }
+    #info{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        text-align: right;
+    }
+</style>
+<script type="text/javascript">
+    var focus = {
+        offset:0,
+        dom:document.querySelector("#focus"),
+        set y(length){
+            this.dom.style["top"]=length + this.offset + "px";
+        },
+        get posY(){
+            return this.dom.style["top"];
+        }
+    }
+    var info = {
+        dom:document.querySelector("#info"),
+        infoCount:0,
+        set text(t){
+            this.dom.innerText=t;
+        },
+        updateInfo(){
+            this.text=`【${focus.posY}】 of ${document.body.clientHeight}
+            ${this.infoCount}`;
+            this.infoCount++;
+        }
+    }
+    var isBottom = false;
+    document.onscroll = ()=>{
+        focus.y = scrollY;
+        info.updateInfo();
+    };
+</script>
+</html>
