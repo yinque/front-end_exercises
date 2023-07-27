@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格固定示例</title>
+    <style>
+
+      .board {
+        /*父容器中，溢出时如果方式为scroll，则scroll方向的padding失效，也就是滚动部分会显示在padding区域中，激活下面的css查看*/
+        /*padding: 0.5em;*/
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        border-radius: 0.3em;
+      }
+      html,body{
+        background-color: #EEE;
+      }
+
+      .table-container {
+        overflow-y: auto;
+        height: 300px; /* 设置表格容器的高度 */
+      }
+
+      table {
+        /*height: calc(100% - 6 *0.5em);*/
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        overflow: scroll;
+
+        border: 1px solid green;
+      }
+
+      /* 表头样式 */
+      thead {
+        background-color: #f2f2f2;
+        position: sticky;
+        top:-1px;
+      }
+      th {
+        font-weight: bold;
+        text-align: left;
+      }
+      th,td{
+        padding: 10px;
+      }
+
+      /* 悬停样式 */
+      tbody tr:hover {
+        background-color: #e6e6e6;
+      }
+
+    </style>
+</head>
+<body>
+<div class="table-container board">
+  <table>
+    <thead>
+    <tr>
+      <th>表头1</th>
+      <th>表头2</th>
+      <th>表头3</th>
+      <th>表头4</th>
+      <th>表头5</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>数据1-1</td>
+      <td>数据1-2</td>
+      <td>数据1-3</td>
+      <td>数据1-4</td>
+      <td>数据1-5</td>
+    </tr>
+    <tr>
+      <td>数据2-1</td>
+      <td>数据2-2</td>
+      <td>数据2-3</td>
+      <td>数据2-4</td>
+      <td>数据2-5</td>
+    </tr>
+    <tr>
+      <td>数据3-1</td>
+      <td>数据3-2</td>
+      <td>数据3-3</td>
+      <td>数据3-4</td>
+      <td>数据3-5</td>
+    </tr>
+    <tr>
+      <td>数据4-1</td>
+      <td>数据4-2</td>
+      <td>数据4-3</td>
+      <td>数据4-4</td>
+      <td>数据4-5</td>
+    </tr>
+    <tr>
+      <td>数据5-1</td>
+      <td>数据5-2</td>
+      <td>数据5-3</td>
+      <td>数据5-4</td>
+      <td>数据5-5</td>
+    </tr>
+    <tr>
+      <td>数据6-1</td>
+      <td>数据6-2</td>
+      <td>数据6-3</td>
+      <td>数据6-4</td>
+      <td>数据6-5</td>
+    </tr>
+    <tr>
+      <td>数据7-1</td>
+      <td>数据7-2</td>
+      <td>数据7-3</td>
+      <td>数据7-4</td>
+      <td>数据7-5</td>
+    </tr>
+    <tr>
+      <td>数据8-1</td>
+      <td>数据8-2</td>
+      <td>数据8-3</td>
+      <td>数据8-4</td>
+      <td>数据8-5</td>
+    </tr>
+    <tr>
+      <td>数据9-1</td>
+      <td>数据9-2</td>
+      <td>数据9-3</td>
+      <td>数据9-4</td>
+      <td>数据9-5</td>
+    </tr>
+    <tr>
+      <td>数据10-1</td>
+      <td>数据10-2</td>
+      <td>数据10-3</td>
+      <td>数据10-4</td>
+      <td>数据10-5</td>
+    </tr>
+    <tr>
+      <td>数据11-1</td>
+      <td>数据11-2</td>
+      <td>数据11-3</td>
+      <td>数据11-4</td>
+      <td>数据11-5</td>
+    </tr>
+    <tr>
+      <td>数据12-1</td>
+      <td>数据12-2</td>
+      <td>数据12-3</td>
+      <td>数据12-4</td>
+      <td>数据12-5</td>
+    </tr>
+    <tr>
+      <td>数据13-1</td>
+      <td>数据13-2</td>
+      <td>数据13-3</td>
+      <td>数据13-4</td>
+      <td>数据13-5</td>
+    </tr>
+    <tr>
+      <td>数据14-1</td>
+      <td>数据14-2</td>
+      <td>数据14-3</td>
+      <td>数据14-4</td>
+      <td>数据14-5</td>
+    </tr>
+    <tr>
+      <td>数据15-1</td>
+      <td>数据15-2</td>
+      <td>数据15-3</td>
+      <td>数据15-4</td>
+      <td>数据15-5</td>
+    </tr>
+    <tr>
+      <td>数据16-1</td>
+      <td>数据16-2</td>
+      <td>数据16-3</td>
+      <td>数据16-4</td>
+      <td>数据16-5</td>
+    </tr>
+    <tr>
+      <td>数据17-1</td>
+      <td>数据17-2</td>
+      <td>数据17-3</td>
+      <td>数据17-4</td>
+      <td>数据17-5</td>
+    </tr>
+    <tr>
+      <td>数据18-1</td>
+      <td>数据18-2</td>
+      <td>数据18-3</td>
+      <td>数据18-4</td>
+      <td>数据18-5</td>
+    </tr>
+    <tr>
+      <td>数据19-1</td>
+      <td>数据19-2</td>
+      <td>数据19-3</td>
+      <td>数据19-4</td>
+      <td>数据19-5</td>
+    </tr>
+    <tr>
+      <td>数据20-1</td>
+      <td>数据20-2</td>
+      <td>数据20-3</td>
+      <td>数据20-4</td>
+      <td>数据20-5</td>
+    </tr>
+    <tr>
+      <td>数据21-1</td>
+      <td>数据21-2</td>
+      <td>数据21-3</td>
+      <td>数据21-4</td>
+      <td>数据21-5</td>
+    </tr>
+    <tr>
+      <td>数据22-1</td>
+      <td>数据22-2</td>
+      <td>数据22-3</td>
+      <td>数据22-4</td>
+      <td>数据22-5</td>
+    </tr>
+    <tr>
+      <td>数据23-1</td>
+      <td>数据23-2</td>
+      <td>数据23-3</td>
+      <td>数据23-4</td>
+      <td>数据23-5</td>
+    </tr>
+    <tr>
+      <td>数据24-1</td>
+      <td>数据24-2</td>
+      <td>数据24-3</td>
+      <td>数据24-4</td>
+      <td>数据24-5</td>
+    </tr>
+    <tr>
+      <td>数据25-1</td>
+      <td>数据25-2</td>
+      <td>数据25-3</td>
+      <td>数据25-4</td>
+      <td>数据25-5</td>
+    </tr>
+    <tr>
+      <td>数据26-1</td>
+      <td>数据26-2</td>
+      <td>数据26-3</td>
+      <td>数据26-4</td>
+      <td>数据26-5</td>
+    </tr>
+    <tr>
+      <td>数据27-1</td>
+      <td>数据27-2</td>
+      <td>数据27-3</td>
+      <td>数据27-4</td>
+      <td>数据27-5</td>
+    </tr>
+    <tr>
+      <td>数据28-1</td>
+      <td>数据28-2</td>
+      <td>数据28-3</td>
+      <td>数据28-4</td>
+      <td>数据28-5</td>
+    </tr>
+    <tr>
+      <td>数据29-1</td>
+      <td>数据29-2</td>
+      <td>数据29-3</td>
+      <td>数据29-4</td>
+      <td>数据29-5</td>
+    </tr>
+    <tr>
+      <td>数据30-1</td>
+      <td>数据30-2</td>
+      <td>数据30-3</td>
+      <td>数据30-4</td>
+      <td>数据30-5</td>
+    </tr>
+    <tr>
+      <td>数据31-1</td>
+      <td>数据31-2</td>
+      <td>数据31-3</td>
+      <td>数据31-4</td>
+      <td>数据31-5</td>
+    </tr>
+    <tr>
+      <td>数据32-1</td>
+      <td>数据32-2</td>
+      <td>数据32-3</td>
+      <td>数据32-4</td>
+      <td>数据32-5</td>
+    </tr>
+    <tr>
+      <td>数据33-1</td>
+      <td>数据33-2</td>
+      <td>数据33-3</td>
+      <td>数据33-4</td>
+      <td>数据33-5</td>
+    </tr>
+    <tr>
+      <td>数据34-1</td>
+      <td>数据34-2</td>
+      <td>数据34-3</td>
+      <td>数据34-4</td>
+      <td>数据34-5</td>
+    </tr>
+    <tr>
+      <td>数据35-1</td>
+      <td>数据35-2</td>
+      <td>数据35-3</td>
+      <td>数据35-4</td>
+      <td>数据35-5</td>
+    </tr>
+    <tr>
+      <td>数据36-1</td>
+      <td>数据36-2</td>
+      <td>数据36-3</td>
+      <td>数据36-4</td>
+      <td>数据36-5</td>
+    </tr>
+    <tr>
+      <td>数据37-1</td>
+      <td>数据37-2</td>
+      <td>数据37-3</td>
+      <td>数据37-4</td>
+      <td>数据37-5</td>
+    </tr>
+    <tr>
+      <td>数据38-1</td>
+      <td>数据38-2</td>
+      <td>数据38-3</td>
+      <td>数据38-4</td>
+      <td>数据38-5</td>
+    </tr>
+    <tr>
+      <td>数据39-1</td>
+      <td>数据39-2</td>
+      <td>数据39-3</td>
+      <td>数据39-4</td>
+      <td>数据39-5</td>
+    </tr>
+    <tr>
+      <td>数据40-1</td>
+      <td>数据40-2</td>
+      <td>数据40-3</td>
+      <td>数据40-4</td>
+      <td>数据40-5</td>
+    </tr>
+    <tr>
+      <td>数据41-1</td>
+      <td>数据41-2</td>
+      <td>数据41-3</td>
+      <td>数据41-4</td>
+      <td>数据41-5</td>
+    </tr>
+    <tr>
+      <td>数据42-1</td>
+      <td>数据42-2</td>
+      <td>数据42-3</td>
+      <td>数据42-4</td>
+      <td>数据42-5</td>
+    </tr>
+    <tr>
+      <td>数据43-1</td>
+      <td>数据43-2</td>
+      <td>数据43-3</td>
+      <td>数据43-4</td>
+      <td>数据43-5</td>
+    </tr>
+    <tr>
+      <td>数据44-1</td>
+      <td>数据44-2</td>
+      <td>数据44-3</td>
+      <td>数据44-4</td>
+      <td>数据44-5</td>
+    </tr>
+    <tr>
+      <td>数据45-1</td>
+      <td>数据45-2</td>
+      <td>数据45-3</td>
+      <td>数据45-4</td>
+      <td>数据45-5</td>
+    </tr>
+    <tr>
+      <td>数据46-1</td>
+      <td>数据46-2</td>
+      <td>数据46-3</td>
+      <td>数据46-4</td>
+      <td>数据46-5</td>
+    </tr>
+    <tr>
+      <td>数据47-1</td>
+      <td>数据47-2</td>
+      <td>数据47-3</td>
+      <td>数据47-4</td>
+      <td>数据47-5</td>
+    </tr>
+    <tr>
+      <td>数据48-1</td>
+      <td>数据48-2</td>
+      <td>数据48-3</td>
+      <td>数据48-4</td>
+      <td>数据48-5</td>
+    </tr>
+    <tr>
+      <td>数据49-1</td>
+      <td>数据49-2</td>
+      <td>数据49-3</td>
+      <td>数据49-4</td>
+      <td>数据49-5</td>
+    </tr>
+    <tr>
+      <td>数据50-1</td>
+      <td>数据50-2</td>
+      <td>数据50-3</td>
+      <td>数据50-4</td>
+      <td>数据50-5</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
