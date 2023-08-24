@@ -1,0 +1,31 @@
+<!--
+使用text-overflow: ellipsis;
+需要同时指定容器overflow: hidden;
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>限制span字符数</title>
+  <link rel="stylesheet" href="../../global.css">
+</head>
+<body>
+<div class="container">
+  <span class="s1">这是一段超长的文本，我想让他超过5个字就省略</span>
+</div>
+</body>
+<style>
+  .container{
+    width: 300px;
+    height: 300px;
+    border: 1px dashed green;
+  }
+  .s1{
+      overflow: hidden;
+      display: inline-block;
+      width: 5em;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+  }
+</style>
+</html>

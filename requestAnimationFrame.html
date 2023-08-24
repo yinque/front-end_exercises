@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation Example</title>
+  <style>
+    html,body{
+      margin: 0;
+    }
+    #box {
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+<div id="box"></div>
+
+<script>
+  const box = document.getElementById('box');
+  let positionX = 0;
+  let positionY = 0;
+  let velocity = 2;
+  let velocityX = 1;
+  let velocityY = 1;
+
+  function animate() {
+    // Update the position of the box
+    positionX += velocity*velocityX;
+    positionY += velocity*velocityY;
+    // Reverse the velocity when the box reaches the right edge
+    if (positionX >= window.innerWidth - box.offsetWidth || positionX <= 0) {
+      velocityX = -velocityX;
+    }
+    if (positionY >= window.innerHeight - box.offsetHeight || positionY <= 0) {
+      velocityY = -velocityY;
+    }
+
+    // Move the box to the updated position
+    box.style.transform = `translate(${positionX}px,${positionY}px)`;
+
+    // Request the next animation frame
+    requestAnimationFrame(animate);
+  }
+
+  // Start the animation
+  requestAnimationFrame(animate);
+</script>
+</body>
+</html>

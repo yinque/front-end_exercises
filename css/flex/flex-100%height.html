@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill Parent with Flexbox</title>
+    <style>
+        html, body {
+            height: 100%; /* 设置最外层的祖父元素（html 和 body）的高度为 100% */
+            margin: 0;
+            padding: 0;
+        }
+
+        .grandparent {
+            height: 100%; /* 设置父元素的父元素（祖父元素）的高度为 100%，未指定则.child的100%不生效。
+            必须要指定height，指定min-height也不会生效。 */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .parent {
+            flex-grow: 1; /* 设置父元素的 flex-grow 为 1，填满父元素的父元素 */
+            background-color: lightgray;
+        }
+
+        .child {
+            height: 100%; /* 子元素的高度设置为 100% */
+            background-color: lightblue; /* 方便看到子元素填充的效果 */
+        }
+    </style>
+</head>
+<body>
+<div class="grandparent">
+    <div class="parent">
+        <div class="child">Child Element
+            <div>解决flex中child设置100%不生效问题，由此来看，如果父元素为flex布局，那么子元素设置百分比高度会寻找祖先元素的height属性</div>
+        </div>
+    </div>
+    <div class="parent">
+    </div>
+</div>
+</body>
+</html>
+<!--
+总结：
+子元素设置百分比高度时，逐渐向父元素寻找，跳过display:flex(列)的元素
+-->
